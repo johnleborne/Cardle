@@ -23,9 +23,8 @@ public class CardList{
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(input))) {
             String line;
-            line = br.readLine(); // Skip the header line
+            br.readLine(); // Skip the header line
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
                 String[] readingArray = line.split(",");
                 Card newCard = new Card(readingArray[0], readingArray[1], Integer.parseInt(readingArray[2]), Integer.parseInt(readingArray[3]));
                 allCardsList.add(newCard);

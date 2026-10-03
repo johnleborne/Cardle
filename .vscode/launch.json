@@ -5,8 +5,7 @@
             "type": "java",
             "name": "Run Cardle",
             "request": "launch",
-            "mainClass": "cardle.Game",
-            "projectName": "cardle-backend"
+            "mainClass": "cardle.Game"
         }
     ]
 }

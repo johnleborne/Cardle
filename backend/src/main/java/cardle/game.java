@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Game{
     public static void main (String[] args){
         CardList cardList = new CardList();
-        cardList.loadCards();
+        CardList.loadCards();
 
         Scanner scnr = new Scanner(System.in);
         System.out.println("Enter player name: ");
@@ -27,9 +27,39 @@ public class Game{
         for (Card card : starterDeck) {
             System.out.println("Card Name: " + card.getName() + ", Description: " + card.getDescription() + ", Value: " + card.getValue() + ", Weight: " + card.getWeight());
         }
+        System.out.println(); // Add an empty line for better readability
+
+        ArrayList<Card> houseDeck = new ArrayList<>();
+        for(int i = 0; i < 5; i++){
+            Card card = cardList.getRandomCard(cardList.allCardsList);
+            houseDeck.add(card);
+        }
         
+        // Display the house deck
+        System.out.println("House Deck:");
+        for (Card card : houseDeck) {
+            System.out.println("Card Name: " + card.getName() + ", Description: " + card.getDescription() + ", Value: " + card.getValue() + ", Weight: " + card.getWeight());
+        }
+        System.out.println(); // Add an empty line for better readability
+        System.out.println("Choose a card from the house deck to replace a card from your starter deck.");
+        System.out.println("Enter the index of the house card you want to choose (1-5): ");
+        int houseCardIndex = scnr.nextInt() - 1;
 
+        System.out.println("Enter the index of the starter deck card you want to replace (1-5): ");
+        int starterCardIndex = scnr.nextInt() - 1;
 
+        if (houseCardIndex >= 0 && houseCardIndex < houseDeck.size() && starterCardIndex >= 0 && starterCardIndex < starterDeck.size()) {
+            Card chosenHouseCard = houseDeck.get(houseCardIndex);
+            starterDeck.set(starterCardIndex, chosenHouseCard);
+        } else {
+            System.out.println("Invalid indices entered.");
+        }
+        
+        // Display the updated starter deck
+        System.out.println("Updated Starter Deck:");
+        for (Card card : starterDeck) {
+            System.out.println("Card Name: " + card.getName() + ", Description: " + card.getDescription() + ", Value: " + card.getValue() + ", Weight: " + card.getWeight());
+        }
 
     }
     
