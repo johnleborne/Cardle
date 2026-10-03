@@ -17,4 +17,32 @@ public class CardList{
             System.err.println("An error occurred while reading the file: " + e.getMessage());
         }
     }
+
+    /*
+    public static Card getRandomCard(){
+        int randomInt = rand.nextInt(allCardsList.size());
+        return allCardsList.
+    }
+    */
+
+    public Card getRandomCard(ArrayList<Card> cards) {
+    Random random = new Random();
+
+    int totalWeight = 0;
+
+    for (Card card : cards) {
+        totalWeight += card.getWeight();
+    }
+
+    int randomNumber = random.nextInt(totalWeight);
+
+    for (Card card : cards) {
+        randomNumber -= card.getWeight();
+
+        if (randomNumber < 0) {
+            return card;
+        }
+    }
+
+    return null;
 }
