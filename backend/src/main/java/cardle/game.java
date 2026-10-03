@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Game{
     public static void main (String[] args){
@@ -12,10 +13,10 @@ public class Game{
         Player player = new Player(playerName);
 
         // Create starter deck
-        Deck starterDeck = new Deck();
+        ArrayList<Card> starterDeck = new ArrayList<>();
         for(int i = 0; i < 5; i++){
-            Card card = cardList.getRandomCard(i);
-            starterDeck.addCard(card);
+            Card card = cardList.getRandomCard(cardList.allCardsList);
+            starterDeck.add(card);
         }
 
 
