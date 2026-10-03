@@ -10,12 +10,6 @@ public class Card {
         this.value = value;
         this.rarity = rarity;
     }
-    public Card(String name, int value, int rarity) {
-        this.name = name;
-        this.description = "";
-        this.value = value;
-        this.rarity = rarity;
-    }
 
     public String getName() {
         return name;
