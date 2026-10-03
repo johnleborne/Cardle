@@ -1,11 +1,15 @@
 import java.util.Random;
-
+import java.
 public class CardList{
     Random rand = new Random();
+    try (BufferedReader br = new BufferedReader(new FileReader("Cards.csv"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.err.println("An error occurred while reading the file: " + e.getMessage());
+        }
 
-    public static card create1H(){
-        card newCard = new card()
-    }
-    public static card create2H(){
-    }
+
 }
