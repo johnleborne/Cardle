@@ -23,5 +23,4 @@ public class Deck {
         this.cards = cards;
     }
 
-   
 }

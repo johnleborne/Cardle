@@ -2,11 +2,13 @@ public class Player {
     private String name;
     private Deck deck;
     private int score;
+    private int luck;
 
     public Player(String name) {
         this.name = name;
         this.deck = new Deck();
         this.score = 0;
+        this.luck = 0;
     }
 
     public String getName() {
