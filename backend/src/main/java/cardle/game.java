@@ -9,7 +9,7 @@ public class Game{
 
         // Create a new player with the entered name
         String playerName = scnr.nextLine();
-        Player player1 = new Player(playerName);
+        Player player = new Player(playerName);
 
         // Create starter deck
         Deck starterDeck = new Deck();

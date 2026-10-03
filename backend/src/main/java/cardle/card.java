@@ -2,13 +2,13 @@ public class Card {
     private String name;
     private String description;
     private int value;
-    private int rarity;
+    private int weight;
 
-    public Card(String name, String description,  int value, int rarity) {
+    public Card(String name, String description,  int value, int weight) {
         this.name = name;
         this.description = description;
         this.value = value;
-        this.rarity = rarity;
+        this.weight = weight;
     }
 
     public String getName() {
@@ -30,6 +30,12 @@ public class Card {
     }
     public void setValue(int value) {
         this.value = value;
+    }
+    public int getWeight() {
+        return weight;
+    }
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
 
