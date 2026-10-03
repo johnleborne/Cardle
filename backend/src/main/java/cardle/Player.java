@@ -33,4 +33,10 @@ public class Player {
     public void setScore(int score) {
         this.score = score;
     }
+    public int getLuck() {
+        return luck;
+    }
+    public void setLuck(int luck) {
+        this.luck = luck;
+    }
 }
