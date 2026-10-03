@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run Cardle",
+            "request": "launch",
+            "mainClass": "cardle.Game",
+            "projectName": "cardle-backend"
+        }
+    ]
+}
