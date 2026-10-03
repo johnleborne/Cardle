@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Game{
     public static void main (String[] args){
         CardList cardList = new CardList();
-        System.out.println(System.getProperty("user.dir"));
         cardList.loadCards();
 
         Scanner scnr = new Scanner(System.in);
@@ -20,6 +19,13 @@ public class Game{
         for(int i = 0; i < 5; i++){
             Card card = cardList.getRandomCard(cardList.allCardsList);
             starterDeck.add(card);
+        }
+
+        // Display the player's name and starter deck
+        System.out.println("Player Name: " + player.getName());
+        System.out.println("Starter Deck:");
+        for (Card card : starterDeck) {
+            System.out.println("Card Name: " + card.getName() + ", Description: " + card.getDescription() + ", Value: " + card.getValue() + ", Weight: " + card.getWeight());
         }
         
 
