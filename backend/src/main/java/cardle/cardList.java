@@ -1,5 +1,3 @@
-import java.util.Random;
-import java.
 public class CardList{
     Random rand = new Random();
     try (BufferedReader br = new BufferedReader(new FileReader("Cards.csv"))) {
