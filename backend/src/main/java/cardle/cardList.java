@@ -9,7 +9,7 @@ public class CardList{
     static ArrayList<Card> allCardsList = new ArrayList<>();
 
     public static void loadCards(){
-        try (BufferedReader br = new BufferedReader(new FileReader("/assets/Cards.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("resources/Cards.csv"))) {
             String line;
             line = br.readLine(); // Skip the header line
             while ((line = br.readLine()) != null) {

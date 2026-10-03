@@ -18,6 +18,7 @@ public class Game{
             Card card = cardList.getRandomCard(cardList.allCardsList);
             starterDeck.add(card);
         }
+        
 
 
 
