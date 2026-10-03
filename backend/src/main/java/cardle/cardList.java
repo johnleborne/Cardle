@@ -25,4 +25,5 @@ import java.util.ArrayList;
         } catch (IOException e) {
             System.err.println("An error occurred while reading the file: " + e.getMessage());
         }
+    }
 }
