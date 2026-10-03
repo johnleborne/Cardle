@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class cardList{
+public class CardList{
     Random rand = new Random();
 
     public static card create1H(){
