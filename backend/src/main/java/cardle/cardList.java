@@ -1,6 +1,9 @@
+package cardle;
+
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class CardList{
@@ -9,7 +12,16 @@ public class CardList{
     static ArrayList<Card> allCardsList = new ArrayList<>();
 
     public static void loadCards(){
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/cardle/resources/Cards.csv"))) {
+        InputStream input = CardList.class
+        .getClassLoader()
+        .getResourceAsStream("Cards.csv");
+        
+        if (input == null) {
+            System.err.println("Could not find Cards.csv");
+            return;
+        }
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(input))) {
             String line;
             line = br.readLine(); // Skip the header line
             while ((line = br.readLine()) != null) {

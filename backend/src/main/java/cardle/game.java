@@ -1,8 +1,11 @@
+package cardle;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Game{
     public static void main (String[] args){
         CardList cardList = new CardList();
+        System.out.println(System.getProperty("user.dir"));
         cardList.loadCards();
 
         Scanner scnr = new Scanner(System.in);
