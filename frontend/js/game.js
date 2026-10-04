@@ -117,6 +117,12 @@ function swapCards(playerCard, houseCard) {
     const swapContainer = document.getElementById("swapContainer");
 
     houseDeckContainer.innerHTML = "";
+    updateScoreToBeat(calculateScoreToBeat());
     swapContainer.innerHTML = "";
 
+}
+
+function updateScoreToBeat(score) {
+    const scoreToBeatContainer = document.getElementById("scoreToBeat");
+    scoreToBeatContainer.textContent = "Score to Beat: " + score;
 }
