@@ -99,7 +99,7 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                         houseDeckContainer.appendChild(button);
                     });
 
-                    calculateHandScore(cardList);
+                    calculateScoreToBeat(cardList);
                 }
             })
             .catch(error => {
