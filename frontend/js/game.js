@@ -1,8 +1,4 @@
-fetch("https://cardle-3.onrender.com/api/test")
-    .then(response => response.text())
-    .then(data => {
-        console.log(data);
-    });
+
 
 const cardList = [];
 const houseCardList = [];
@@ -46,7 +42,7 @@ document.getElementById("starterDeck").addEventListener("click", () => {
 
     for (let i = 0; i < 10; i++) {
 
-        fetch("https://cardle-3.onrender.com/api/card")
+        fetch("http://localhost:8080/api/card")
             .then(response => response.json())
             .then(card => {
 
