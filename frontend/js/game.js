@@ -4,10 +4,10 @@ fetch("http://localhost:8080/api/test")
         console.log(data);
     });
 
-    const cardList = [];
-    const deckContainer = document.getElementById("deckContainer");
+const cardList = [];
+const deckContainer = document.getElementById("deckContainer");
 
-    document.getElementById("starterDeck").addEventListener("click", () => {
+document.getElementById("starterDeck").addEventListener("click", () => {
 
     cardList.length = 0;
     deckContainer.innerHTML = "";
@@ -21,25 +21,29 @@ fetch("http://localhost:8080/api/test")
                 cardList.push(card);
 
                 console.log("Card received:", card);
-             })
+
+                // Wait until all 5 cards have been received
+                if (cardList.length === 5) {
+
+                    console.log("Starter Deck:", cardList);
+
+                    cardList.forEach(card => {
+
+                        const button = document.createElement("button");
+
+                        button.textContent =
+                            card.suit + " " + card.name;
+
+                        button.addEventListener("click", () => {
+                            console.log("Card clicked:", card);
+                        });
+
+                        deckContainer.appendChild(button);
+                    });
+                }
+            })
             .catch(error => {
                 console.error("Error:", error);
             });
-        }
-
-        console.log("Starter Deck:", cardList);
-
-        cardList.forEach(card => {
-
-            const button = document.createElement("button");
-
-            button.textContent =
-                card.suit + " " + card.name;
-
-            button.addEventListener("click", () => {
-                console.log("Card clicked:", card);
-            });
-
-            deckContainer.appendChild(button);
-        });
-    });
+    }
+});
