@@ -10,7 +10,7 @@ fetch("http://localhost:8080/api/test")
             .then(response => response.json())
             .then(card => {
                 for(i = 0; i < 5; i++) {
-                    
+                    card = getCard();
                     cardList.push(card);
                 }
                 console.log("Starter Deck:", cardList);
