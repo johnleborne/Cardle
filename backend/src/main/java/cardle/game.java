@@ -78,12 +78,12 @@ public class Game{
             System.out.println("===============================");
             System.out.println("Score to beat: " + scoreToBeat);
 
-            while(isChoosingCards){
-                System.out.println("Select cards to play for this hand: ");
-                gameFunctions.selectCards(starterDeck, scnr);
+            // while(isChoosingCards){
+            //     System.out.println("Select cards to play for this hand: ");
+            //     gameFunctions.selectCards(starterDeck, scnr);
 
 
-            }
+            // }
         }
             if(scoreToBeat <= 0){
                 System.out.println("You have beaten the score!");
