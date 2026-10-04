@@ -35,3 +35,11 @@ public class gameFunctions {
 
     }
 }
+
+public static double calculateScore(ArrayList<Card> hand) {
+    double score = 0.0;
+    for (Card card : hand) {
+        score += card.getValue();
+    }
+    return score;
+}

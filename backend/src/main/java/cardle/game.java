@@ -64,27 +64,33 @@ public class game{
         }
 
         System.out.println(); // Add an empty line for better readability
-        double scoreToBeat = 0;
+        double scoreToBeat = 100;
         for(Card card : starterDeck){
             scoreToBeat += card.getValue();
         }
         
         boolean playerIsAlive = true;
-        double totalScore = 0;
-
+        double currentScore = 0;
+        int stage = 0;
         // Game loop
         while (playerIsAlive){
+            scoreToBeat = 100 + 100*stage;
             System.out.println("===============================");
+            System.out.println("Stage " + (stage + 1));
             System.out.println("Score to beat: " + scoreToBeat);
 
             System.out.println("Select cards to play for this hand: ");
             starterDeck = gameFunctions.selectCards(starterDeck, scnr);
-            
-            if(scoreToBeat <= 0){
+
+            currentScore = gameFunctions.calculateScore(starterDeck);
+
+            if (scoreToBeat - currentScore <= 0){
                     System.out.println("You have beaten the score!");
-                }
-            else{
+                    stage++;
+            }
+            else {
                 System.out.println("You lose! Score to beat remaining: " + scoreToBeat);
+                playerIsAlive = false;
             }
         }
     }
