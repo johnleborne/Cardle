@@ -41,7 +41,7 @@ public class CardList{
     }
     */
 
-    public Card getRandomCard(ArrayList<Card> cards) {
+    public static Card getRandomCard(ArrayList<Card> cards) {
     Random random = new Random();
 
     int totalWeight = 0;

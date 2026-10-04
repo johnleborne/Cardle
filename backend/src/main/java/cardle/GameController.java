@@ -12,4 +12,8 @@ public class GameController {
     public String test() {
         return "Cardle backend is working!";
     }
+    @GetMapping("/api/card")
+    public Card getCard() {
+        return CardList.getRandomCard(CardList.allCardsList);
+    }
 }
