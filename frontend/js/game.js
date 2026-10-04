@@ -7,7 +7,7 @@ fetch("http://localhost:8080/api/test")
     const cardList = [];
     const deckContainer = document.getElementById("deckContainer");
 
-    document.getElementById("starterDeck").addEventListener("click", () => {
+    document.getElementById("starterHand").addEventListener("click", () => {
          for (let i = 0; i < 5; i++) {
 
         fetch("http://localhost:8080/api/card")
@@ -19,14 +19,14 @@ fetch("http://localhost:8080/api/test")
                 console.log("Card received:", card);
 
                 if (cardList.length === 5) {
-                    console.log("Starter Deck:", cardList);
+                    console.log("Starter Hand:", cardList);
                 }
 
             })
             .catch(error => {
                 console.error("Error:", error);
             });
-                console.log("Starter Deck:", cardList);
+                console.log("Starter Hand:", cardList);
                 buttonLabels.forEach(label => {
                     const button = document.createElement("button");
                     button.textContent = label;
