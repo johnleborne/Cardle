@@ -2,7 +2,7 @@ package cardle;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-public class Game{
+public class game{
     public static void main (String[] args){
         CardList cardList = new CardList();
         CardList.loadCards();
