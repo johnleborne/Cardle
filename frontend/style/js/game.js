@@ -4,11 +4,17 @@ fetch("http://localhost:8080/api/test")
         console.log(data);
     });
 
+    const cardList = [];
     document.getElementById("starterDeck").addEventListener("click", () => {
         fetch("http://localhost:8080/api/card")
             .then(response => response.json())
             .then(card => {
-                console.log("Starter Deck Card:", card);
+                for(i = 0; i < 5; i++) {
+                    
+                    cardList.push(card);
+                }
+                console.log("Starter Deck:", cardList);
+                
             })
             .catch(error => {
                 console.error("Error:", error);
