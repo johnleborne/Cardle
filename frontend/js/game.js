@@ -8,13 +8,24 @@ fetch("http://localhost:8080/api/test")
     const deckContainer = document.getElementById("deckContainer");
 
     document.getElementById("starterDeck").addEventListener("click", () => {
+         for (let i = 0; i < 5; i++) {
+
         fetch("http://localhost:8080/api/card")
             .then(response => response.json())
             .then(card => {
-                for(i = 0; i < 5; i++) {
-                    card = getCard();
-                    cardList.push(card);
+
+                cardList.push(card);
+
+                console.log("Card received:", card);
+
+                if (cardList.length === 5) {
+                    console.log("Starter Deck:", cardList);
                 }
+
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
                 console.log("Starter Deck:", cardList);
                 buttonLabels.forEach(label => {
                     const button = document.createElement("button");
@@ -25,9 +36,5 @@ fetch("http://localhost:8080/api/test")
                     });
                     deckContainer.appendChild(button);
                 });
-                
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
-    });
+    }
+});
