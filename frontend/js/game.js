@@ -41,6 +41,7 @@ document.getElementById("starterDeck").addEventListener("click", () => {
     swapContainer.innerHTML = "";
 
     for (let i = 0; i < 10; i++) {
+        console.log("HE:LLLLLPPPPPPPPPPPP");
 
         fetch("http://localhost:8080/api/card")
             .then(response => response.json())
