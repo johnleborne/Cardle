@@ -98,6 +98,8 @@ document.getElementById("starterDeck").addEventListener("click", () => {
 
                         houseDeckContainer.appendChild(button);
                     });
+
+                    calculateHandScore(cardList);
                 }
             })
             .catch(error => {
@@ -125,4 +127,13 @@ function swapCards(playerCard, houseCard) {
 function updateScoreToBeat(score) {
     const scoreToBeatContainer = document.getElementById("scoreToBeat");
     scoreToBeatContainer.textContent = "Score to Beat: " + score;
+}
+
+function calculateHandScore(cardList){
+    sum = 0;
+    cardList.forEach(card => {
+        let sum = card.value + sum;
+    });
+
+    console.log("Hand Score:", sum);
 }
