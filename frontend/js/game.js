@@ -7,6 +7,12 @@ fetch("https://cardle-3.onrender.com/api/test")
 const cardList = [];
 const houseCardList = [];
 const deckContainer = document.getElementById("deckContainer");
+const houseDeckContainer = document.getElementById("houseDeckContainer");
+
+function areBothDecksSelected() {
+    return deckContainer.querySelector(".card-button.clicked") !== null &&
+        houseDeckContainer.querySelector(".house-card-button.clicked") !== null;
+}
 
 document.getElementById("starterDeck").addEventListener("click", () => {
 
@@ -45,13 +51,24 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                             button.classList.add("clicked");
 
                             console.log("Card clicked:", card);
+                            if (areBothDecksSelected()) {
+                                const button = document.createElement("button");
+                                button.textContent = "Swap Cards";
+                                button.addEventListener("click", () => {
+                                    const playerCard = deckContainer.querySelector(".card-button.clicked");
+                                    const houseCard = houseDeckContainer.querySelector(".house-card-button.clicked");
+                                    if (playerCard && houseCard) {
+                                        swapCards(playerCard, houseCard);
+                                    }
+                                });
+                                swapContainer.appendChild(button);
+                            }
                         });
 
                         deckContainer.appendChild(button);
                     });
 
                     // Display house cards
-                    const houseDeckContainer = document.getElementById("houseDeckContainer");
                     houseDeckContainer.innerHTML = "";
                     houseCardList.forEach(card => {
                         const button = document.createElement("button");
@@ -65,6 +82,9 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                             button.classList.add("clicked");
 
                             console.log("Card clicked:", card);
+                            if (areBothDecksSelected()) {
+                                console.log("A card is selected from each deck.");
+                            }
                         });
 
                         houseDeckContainer.appendChild(button);
@@ -76,3 +96,11 @@ document.getElementById("starterDeck").addEventListener("click", () => {
             });
     }
 });
+
+function swapCards(playerCard, houseCard) {
+    const playerCardClone = playerCard.cloneNode(true);
+    const houseCardClone = houseCard.cloneNode(true);
+
+    playerCard.replaceWith(houseCardClone);
+    houseCard.replaceWith(playerCardClone);
+}
