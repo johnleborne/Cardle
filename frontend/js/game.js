@@ -101,7 +101,10 @@ function swapCards(playerCard, houseCard) {
     const playerCardClone = playerCard.cloneNode(true);
     const houseCardClone = houseCard.cloneNode(true);
     playerCard.classList.remove("clicked");
-    houseCard.classList.remove("clicked");
+    playerCardClone.classList.remove("clicked");
     playerCard.replaceWith(houseCardClone);
-    houseCardList.forEach((card, index) => {card.remove();});
+    const houseDeckContainer =
+        document.getElementById("houseDeckContainer");
+
+    houseDeckContainer.innerHTML = "";
 }
