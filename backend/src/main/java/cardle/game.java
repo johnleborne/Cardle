@@ -79,14 +79,14 @@ public class game{
 
             System.out.println("Select cards to play for this hand: ");
             starterDeck = gameFunctions.selectCards(starterDeck, scnr);
-
-        }
+            
             if(scoreToBeat <= 0){
-                System.out.println("You have beaten the score!");
-            }
+                    System.out.println("You have beaten the score!");
+                }
             else{
                 System.out.println("You lose! Score to beat remaining: " + scoreToBeat);
             }
+        }
     }
     
 }
