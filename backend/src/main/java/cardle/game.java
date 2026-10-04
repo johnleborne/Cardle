@@ -116,7 +116,7 @@ public class Game{
         scoreToBeat -= totalScore;
             if(scoreToBeat <= 0){
                 System.out.println("You have beaten the score!");
-                return;
+               
             }
             else{
                 System.out.println("You lose! Score to beat remaining: " + scoreToBeat);

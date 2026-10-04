@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class CardList{
-    Random rand = new Random();
+    static Random rand = new Random();
 
     static ArrayList<Card> allCardsList = new ArrayList<>();
 
