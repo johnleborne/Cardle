@@ -8,16 +8,41 @@ const cardList = [];
 const houseCardList = [];
 const deckContainer = document.getElementById("deckContainer");
 const houseDeckContainer = document.getElementById("houseDeckContainer");
+const swapContainer = document.getElementById("swapContainer");
 
 function areBothDecksSelected() {
     return deckContainer.querySelector(".card-button.clicked") !== null &&
         houseDeckContainer.querySelector(".house-card-button.clicked") !== null;
 }
 
+function updateSwapButton() {
+    if (!areBothDecksSelected()) {
+        swapContainer.innerHTML = "";
+        return;
+    }
+
+    if (swapContainer.querySelector(".swap-button")) {
+        return;
+    }
+
+    const button = document.createElement("button");
+    button.classList.add("swap-button");
+    button.textContent = "Swap Cards";
+    button.addEventListener("click", () => {
+        const playerCard = deckContainer.querySelector(".card-button.clicked");
+        const houseCard = houseDeckContainer.querySelector(".house-card-button.clicked");
+        if (playerCard && houseCard) {
+            swapCards(playerCard, houseCard);
+        }
+    });
+    swapContainer.appendChild(button);
+}
+
 document.getElementById("starterDeck").addEventListener("click", () => {
 
     cardList.length = 0;
     deckContainer.innerHTML = "";
+    swapContainer.innerHTML = "";
 
     for (let i = 0; i < 10; i++) {
 
@@ -51,18 +76,7 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                             button.classList.add("clicked");
 
                             console.log("Card clicked:", card);
-                            if (areBothDecksSelected()) {
-                                const button = document.createElement("button");
-                                button.textContent = "Swap Cards";
-                                button.addEventListener("click", () => {
-                                    const playerCard = deckContainer.querySelector(".card-button.clicked");
-                                    const houseCard = houseDeckContainer.querySelector(".house-card-button.clicked");
-                                    if (playerCard && houseCard) {
-                                        swapCards(playerCard, houseCard);
-                                    }
-                                });
-                                swapContainer.appendChild(button);
-                            }
+                            updateSwapButton();
                         });
 
                         deckContainer.appendChild(button);
@@ -82,9 +96,7 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                             button.classList.add("clicked");
 
                             console.log("Card clicked:", card);
-                            if (areBothDecksSelected()) {
-                                console.log("A card is selected from each deck.");
-                            }
+                            updateSwapButton();
                         });
 
                         houseDeckContainer.appendChild(button);
@@ -105,6 +117,9 @@ function swapCards(playerCard, houseCard) {
     playerCard.replaceWith(houseCardClone);
     const houseDeckContainer =
         document.getElementById("houseDeckContainer");
+    const swapContainer = document.getElementById("swapContainer");
 
     houseDeckContainer.innerHTML = "";
+    swapContainer.innerHTML = "";
+
 }
