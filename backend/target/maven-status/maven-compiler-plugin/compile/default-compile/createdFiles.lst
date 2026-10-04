@@ -1,4 +1,5 @@
 cardle\Player.class
+cardle\CardleApplication.class
 cardle\Card.class
 cardle\CardList.class
 cardle\Game.class
