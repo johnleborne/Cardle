@@ -38,9 +38,8 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                         button.addEventListener("click", () => {
                             document.querySelectorAll(".card-button")
                                 .forEach(btn => btn.disabled = true);
-                            button.disabled = true;
-                            button.classList.add("clicked");
-                            
+                            button.disabled = false;
+
                             console.log("Card clicked:", card);
                         });
 
