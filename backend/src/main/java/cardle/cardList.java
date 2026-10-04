@@ -11,6 +11,10 @@ public class CardList{
 
     static ArrayList<Card> allCardsList = new ArrayList<>();
 
+    static{
+        loadCards();
+    }
+
     public static void loadCards(){
         InputStream input = CardList.class
         .getClassLoader()
