@@ -24,6 +24,9 @@ document.getElementById("starterDeck").addEventListener("click", () => {
 
                 // Wait until all 5 cards have been received
                 if (cardList.length === 5) {
+                    const button = document.createElement("button");
+                    button.textContent = "TEST BUTTON";
+                    deckContainer.appendChild(button);
 
                     console.log("Starter Deck:", cardList);
 
@@ -32,7 +35,7 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                         const button = document.createElement("button");
 
                         button.textContent =
-                            card.suit + " " + card.name;
+                            card.name + " " + card.value;
 
                         button.addEventListener("click", () => {
                             console.log("Card clicked:", card);
