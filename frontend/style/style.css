@@ -1,10 +1,40 @@
 h1 {
-    color: rgb(164, 214, 229);
+    color: rgb(79, 145, 147);
     text-align: center;
     font-family: Arial, sans-serif;
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 20px;
     text-transform: uppercase;
+}
+
+#starterDeck {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#houseDeckContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#deckContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+}
+#swapContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
 }
 
 .card-button {
@@ -12,9 +42,6 @@ h1 {
     padding: 10px;
     font-size: 16px;
 }
-
-
-
 
 .card-button.clicked {
     background-color: lightgray;
