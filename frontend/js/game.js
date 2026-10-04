@@ -55,12 +55,12 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                     houseDeckContainer.innerHTML = "";
                     houseCardList.forEach(card => {
                         const button = document.createElement("button");
-                        button.classList.add("card-button");
+                        button.classList.add("house-card-button");
 
                         button.textContent = card.name + " " + card.value;
 
                         button.addEventListener("click", () => {
-                            document.querySelectorAll(".card-button")
+                            document.querySelectorAll(".house-card-button")
                                 .forEach(btn => btn.classList.add("clicked"));
                             button.classList.remove("clicked");
 

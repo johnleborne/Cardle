@@ -2,11 +2,6 @@ h1 {
     color: blue;
 }
 
-p {
-    font-size: 16px;
-    color: green;
-}
-
 .card-button {
     margin: 5px;
     padding: 10px;
@@ -14,6 +9,15 @@ p {
 }
 
 .card-button.clicked {
+    background-color: lightgray;
+    cursor: not-allowed;
+}
+.house-card-button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+.house-card-button.clicked {
     background-color: lightgray;
     cursor: not-allowed;
 }
