@@ -8,14 +8,16 @@ h1 {
 }
 
 h4 {
-    color: rgb(79, 147, 115);
+    color:white;
+    -webkit-text-stroke: 1px black;
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 20px;
     margin-bottom: 15px;
 }
-h5 {
-    color: rgb(79, 147, 115);
+h3 {
+    color:white;
+    -webkit-text-stroke: 1px black;
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 20px;
