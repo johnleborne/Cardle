@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class gameFunctions {
-    // prompts user and returns a hand to play
     public static ArrayList<Card> selectCards (ArrayList<Card> deck, Scanner scnr) {
         ArrayList<Card> finalHand = new ArrayList<Card>();
         boolean isChoosing = true;
@@ -33,12 +32,11 @@ public class gameFunctions {
         return finalHand;
 
     }
-
     public static double calculateScore(ArrayList<Card> hand) {
-    double score = 0.0;
-    for (Card card : hand) {
-        score += card.getValue();
+        double score = 0.0;
+        for (Card card : hand) {
+            score += card.getValue();
+        }
+        return score;
     }
-    return score;
-}
 }
