@@ -132,7 +132,7 @@ function updateScoreToBeat(score) {
 function calculateHandScore(cardList){
     let sum = 0;
     cardList.forEach(card => {
-        let sum = card.value + sum;
+        sum += card.value;
     });
 
     console.log("Hand Score:", sum);
