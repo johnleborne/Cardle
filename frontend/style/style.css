@@ -7,3 +7,13 @@ p {
     color: green;
 }
 
+.card-button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.card-button:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+}
