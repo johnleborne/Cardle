@@ -129,11 +129,12 @@ function updateScoreToBeat(score) {
     scoreToBeatContainer.textContent = "Score to Beat: " + score;
 }
 
-function calculateHandScore(cardList){
+function calculateScoreToBeat(cardList){
     let sum = 0;
     cardList.forEach(card => {
         sum += card.value;
     });
 
     console.log("Hand Score:", sum);
+    return sum;
 }
