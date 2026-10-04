@@ -27,7 +27,7 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                 console.log("Card received:", card);
 
                 // Wait until all 5 cards have been received
-                if (cardList.length === 10) {
+                if (cardList.length === 5 && houseCardList.length === 5) {
 
                     console.log("Starter Deck:", cardList);
 
