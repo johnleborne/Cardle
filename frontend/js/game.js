@@ -100,7 +100,8 @@ document.getElementById("starterDeck").addEventListener("click", () => {
 function swapCards(playerCard, houseCard) {
     const playerCardClone = playerCard.cloneNode(true);
     const houseCardClone = houseCard.cloneNode(true);
-
+    playerCard.classList.remove("clicked");
+    houseCard.classList.remove("clicked");
     playerCard.replaceWith(houseCardClone);
-    houseCard.replaceWith(playerCardClone);
+    houseCardList.forEach((card, index) => {card.remove();});
 }
