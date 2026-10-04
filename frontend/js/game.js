@@ -5,6 +5,7 @@ fetch("http://localhost:8080/api/test")
     });
 
 const cardList = [];
+const houseCardList = [];
 const deckContainer = document.getElementById("deckContainer");
 
 document.getElementById("starterDeck").addEventListener("click", () => {
@@ -12,18 +13,21 @@ document.getElementById("starterDeck").addEventListener("click", () => {
     cardList.length = 0;
     deckContainer.innerHTML = "";
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
 
         fetch("http://localhost:8080/api/card")
             .then(response => response.json())
             .then(card => {
 
-                cardList.push(card);
+                if(i < 5)
+                    cardList.push(card);
+                else
+                    houseCardList.push(card);
 
                 console.log("Card received:", card);
 
                 // Wait until all 5 cards have been received
-                if (cardList.length === 5) {
+                if (cardList.length === 10) {
 
                     console.log("Starter Deck:", cardList);
 
@@ -44,6 +48,26 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                         });
 
                         deckContainer.appendChild(button);
+                    });
+
+                    // Display house cards
+                    const houseDeckContainer = document.getElementById("houseDeckContainer");
+                    houseDeckContainer.innerHTML = "";
+                    houseCardList.forEach(card => {
+                        const button = document.createElement("button");
+                        button.classList.add("card-button");
+
+                        button.textContent = card.name + " " + card.value;
+
+                        button.addEventListener("click", () => {
+                            document.querySelectorAll(".card-button")
+                                .forEach(btn => btn.classList.add("clicked"));
+                            button.classList.remove("clicked");
+
+                            console.log("Card clicked:", card);
+                        });
+
+                        houseDeckContainer.appendChild(button);
                     });
                 }
             })
