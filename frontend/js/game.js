@@ -37,8 +37,8 @@ document.getElementById("starterDeck").addEventListener("click", () => {
 
                         button.addEventListener("click", () => {
                             document.querySelectorAll(".card-button")
-                                .forEach(btn => btn.disabled = true);
-                            button.disabled = false;
+                                .forEach(btn => btn.classList.add("clicked"));
+                            button.classList.remove("clicked");
 
                             console.log("Card clicked:", card);
                         });
