@@ -1,5 +1,4 @@
 package cardle;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -34,12 +33,11 @@ public class gameFunctions {
         return finalHand;
 
     }
-}
-
-public static double calculateScore(ArrayList<Card> hand) {
-    double score = 0.0;
-    for (Card card : hand) {
-        score += card.getValue();
+    public static double calculateScore(ArrayList<Card> hand) {
+        double score = 0.0;
+        for (Card card : hand) {
+            score += card.getValue();
+        }
+        return score;
     }
-    return score;
 }
