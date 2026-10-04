@@ -40,9 +40,9 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                             card.name + " " + card.value;
 
                         button.addEventListener("click", () => {
-                            document.querySelectorAll(".card-button")
-                                .forEach(btn => btn.classList.add("clicked"));
-                            button.classList.remove("clicked");
+                            deckContainer.querySelectorAll(".card-button")
+                                .forEach(btn => btn.classList.remove("clicked"));
+                            button.classList.add("clicked");
 
                             console.log("Card clicked:", card);
                         });
@@ -60,9 +60,9 @@ document.getElementById("starterDeck").addEventListener("click", () => {
                         button.textContent = card.name + " " + card.value;
 
                         button.addEventListener("click", () => {
-                            document.querySelectorAll(".house-card-button")
-                                .forEach(btn => btn.classList.add("clicked"));
-                            button.classList.remove("clicked");
+                            houseDeckContainer.querySelectorAll(".house-card-button")
+                                .forEach(btn => btn.classList.remove("clicked"));
+                            button.classList.add("clicked");
 
                             console.log("Card clicked:", card);
                         });

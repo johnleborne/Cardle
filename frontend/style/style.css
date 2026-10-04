@@ -10,7 +10,6 @@ h1 {
 
 .card-button.clicked {
     background-color: lightgray;
-    cursor: not-allowed;
 }
 .house-card-button {
     margin: 5px;
@@ -19,5 +18,4 @@ h1 {
 }
 .house-card-button.clicked {
     background-color: lightgray;
-    cursor: not-allowed;
 }
